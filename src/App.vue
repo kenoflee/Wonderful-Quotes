@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <app-header :quoteCount="quotes.length" :maxQuotes="maxQuotes"></app-header>
         <app-new-quote @quoteAdded="newQuote"></app-new-quote>
         <app-quote-card :quotes="quotes" @quoteDeleted="deleteQuote"></app-quote-card>
         <div class="row">
@@ -15,6 +16,7 @@
 <script>
     import QuoteCard from './components/QuoteCard.vue';
     import NewQuote from './components/NewQuote.vue';
+    import Header from './components/Header.vue';
 
     export default {
         data() {
@@ -34,6 +36,7 @@
         components: {
             appQuoteCard: QuoteCard,
             appNewQuote: NewQuote,
+            appHeader: Header,
         }
     }
 </script>
