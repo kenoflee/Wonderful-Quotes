@@ -27,6 +27,9 @@
         },
         methods: {
             newQuote(quote) {
+                if(this.quotes.length >= this.maxQuotes) {
+                    return alert('Maximum capacity!');
+                }
                 this.quotes.push(quote);
             },
             deleteQuote(index) {
